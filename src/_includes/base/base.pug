@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Cats Eleventy Starter
+
+        include favicons.pug
+
+        meta(property="og:title" content=title)
+        meta(property="og:url" content="https://example.com/")
+        if description
+            meta(property="og:description" content=description)
+        else
+            meta(property="og:description" content="A default description for your website")
+        meta(property="og:image" content="https://example.com/assets/image.png")
+        meta(property="og:image:alt" content="A drawing of a cat!")
+        meta(property="og:site_name" content="Example")
+
+        script(defer data-domain="example.com" src="https://plausible.denperidge.com/js/script.js")
+
+        link(rel="stylesheet", href="/stylesheet.css")
+        if stylesheet
+            link(rel="stylesheet", href=`/style/${stylesheet}.css`)
+
+
+    body
+        header 
+            a(href="#main").skip-link Skip to main content
+            nav 
+                ul
+                    - collections.page.sort((pageA, pageB) => pageA.data.order - pageB.data.order);  // https://stackoverflow.com/a/979289a
+                    each page in collections.page
+                        a(href=page.url)
+                            li=page.data.title
+        
+        | !{content}
+        
