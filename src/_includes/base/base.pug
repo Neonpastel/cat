@@ -31,8 +31,8 @@ html(lang="en")
                 ul
                     - collections.page.sort((pageA, pageB) => pageA.data.order - pageB.data.order);  // https://stackoverflow.com/a/979289a
                     each page in collections.page
-                        a(href=page.url)
-                            li=page.data.title
+                        li
+                            a(href=page.url)=page.data.title
         
         | !{content}
         
