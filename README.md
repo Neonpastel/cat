@@ -5,6 +5,7 @@ A template with...
 - Base template which has a **skip-link**, allows for custom title & page specific stylesheet imports
 - **Favicon** generation
 - **OpenGraph** support
+- **Normalize.css** imported by default
 - Templates extending **base template** into page.md & page.pug, which when used get automatically added in the **nav**
 - Classes from the accessibility section in [my helpers repo](https://github.com/Denperidge/helpers) built-in
 

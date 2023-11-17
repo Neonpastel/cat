@@ -17,6 +17,7 @@
     "@11ty/eleventy": "^2.0.1",
     "eleventy-sass": "^2.2.3",
     "favicons": "^7.1.4",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "normalize.css": "^8.0.1"
   }
 }
