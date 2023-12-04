@@ -1,6 +1,7 @@
 # Cat Eleventy Starter
 A template with...
 - **YAML** & **SASS/SCSS** (including importing from `node_modules`) support
+- Automatic **cache busting** using [eleventy-auto-cache-buster](https://github.com/Denperidge/eleventy-auto-cache-buster)
 - Directory structure with `src/` and `dist/`
 - Base template which has a **skip-link**, allows for custom title & page specific stylesheet imports
 - **Favicon** generation

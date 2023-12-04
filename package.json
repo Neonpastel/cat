@@ -1,20 +1,17 @@
 {
   "name": "cats-eleventy-starter",
   "version": "1.0.0",
-  
   "description": "My starter template for Eleventy websites",
   "author": "Denperidge",
-
   "repository": "https://github.com/Denperidge/cats-eleventy-starter.git",
   "license": "Unlicense",
-  
   "scripts": {
     "dev": "yarn eleventy --serve",
     "build": "yarn eleventy"
   },
-  
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "eleventy-auto-cache-buster": "^0.1.1",
     "eleventy-sass": "^2.2.3",
     "favicons": "^7.1.4",
     "js-yaml": "^4.1.0",

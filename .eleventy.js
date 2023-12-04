@@ -1,5 +1,6 @@
 const yaml = require("js-yaml");
 const eleventySass = require("eleventy-sass");
+const eleventyAutoCacheBuster = require("eleventy-auto-cache-buster");
 
 const favicons = require("./.favicons");
 
@@ -17,6 +18,8 @@ module.exports = function (eleventyConfig) {
             loadPaths: ["node_modules"]
         }
     });
+
+    eleventyConfig.addPlugin(eleventyAutoCacheBuster);
 
     return {
         dir: {
