@@ -1,2 +1,33 @@
 @import "normalize.css/normalize";
 @import "style/accessibility";
+
+body {
+    color: white;
+    font-size: 1.1rem;
+    background-image: url("/cat/assets/tile.gif");
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+iframe {
+    display: block;
+    margin: auto;
+}
+
+a {
+    &:link {
+        color: white;
+    }
+    &:visited {
+        color: wheat;
+    }
+    &:hover {
+        color: red;
+    }
+    &:active {
+        color: cyan;
+    }
+}
