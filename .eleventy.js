@@ -1,3 +1,4 @@
+const EleventyHtmlBasePlugin = require("@11ty/eleventy").EleventyHtmlBasePlugin;
 const yaml = require("js-yaml");
 const eleventySass = require("eleventy-sass");
 const eleventyAutoCacheBuster = require("eleventy-auto-cache-buster");
@@ -6,6 +7,8 @@ const favicons = require("./.favicons");
 
 
 module.exports = function (eleventyConfig) {
+    eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+
     favicons({
         input: "src",
         output: "dist",
