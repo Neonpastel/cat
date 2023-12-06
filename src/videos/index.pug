@@ -1,0 +1,13 @@
+---
+layout: page.pug
+permalink: "|/videos/"
+order: 1
+title: Videos
+---
+
+h1 Videos
+
+ul
+    each page in collections.videos
+        a(href=page.url)
+            li=page.data.title

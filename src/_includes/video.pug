@@ -2,15 +2,13 @@
 layout: base/base.pug
 tags:
     - videos
-    - poetry
 eleventyComputed:
     permalink: "| /videos/{{title | slugify}}"
-
 ---
 
 main#main
     h1
-        a(href=`/poetry/`) Poetry
+        a(href="/videos/") Videos
         span  - #{title}
 
     if video
