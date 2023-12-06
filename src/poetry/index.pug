@@ -1,0 +1,13 @@
+---
+layout: page.pug
+permalink: "| /poetry/"
+order: 1
+title: Poetry
+---
+
+h1 Poetry
+
+ul
+    each page in collections.poetry
+        a(href=page.url)
+            li=page.data.title
