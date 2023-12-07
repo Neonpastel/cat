@@ -3,6 +3,7 @@
 
 body {
     color: white;
+    background-color: black;
     font-size: 1.1rem;
     background-image: url("/cat/assets/tile.gif");
 }
@@ -10,6 +11,10 @@ body {
 main {
     width: 80%;
     margin: auto;
+
+    @media (max-width: 800px) {
+        width: 95%;
+    }
 }
 
 iframe {

@@ -1,0 +1,13 @@
+---
+layout: video.pug
+pagination:
+    data: videos
+    size: 1
+    alias: data
+eleventyComputed:
+    title: {{ data.title }}
+    video: {{data.video}}
+---
+
+p=data.title
+- console.log(data.video)
