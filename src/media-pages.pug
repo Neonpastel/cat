@@ -16,6 +16,7 @@ main#main
         iframe(width="560" height="315" src=`https://www.youtube.com/embed/${media.videoId}` title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
 
     if media.text
+        h2.sr-only Text
         section.markdown-render=media.text        
             
     | !{content}
