@@ -1,0 +1,21 @@
+---
+layout: base/base.pug
+pagination:
+    data: NeonpastelCat
+    size: 1
+    alias: media
+permalink: "| /!{ media.types[0].toLowerCase() }/!{ media.path }/"
+---
+main#main
+    h1
+        a(href=`/${media.types[0].toLowerCase()}/`)=media.types[0]
+        span  - #{media.title}
+
+    if media.videoId
+        h2 Video
+        iframe(width="560" height="315" src=`https://www.youtube.com/embed/${media.videoId}` title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
+
+    if media.text
+        section.markdown-render=media.text        
+            
+    | !{content}

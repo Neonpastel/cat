@@ -3,8 +3,11 @@ const yaml = require("js-yaml");
 const eleventySass = require("eleventy-sass");
 const eleventyAutoCacheBuster = require("eleventy-auto-cache-buster");
 const embedEverything = require("eleventy-plugin-embed-everything");
+const md = require("jstransformer")(require("jstransformer-markdown-it"));
 
 const favicons = require("./.favicons");
+
+const directusToData = require("./directus");
 
 
 module.exports = function (eleventyConfig) {
@@ -16,7 +19,9 @@ module.exports = function (eleventyConfig) {
     });
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
-    eleventyConfig.ignores.add("src/poetry/**/[!index]*.md")
+    directusToData({
+        configFilename: ".directus.json"
+    })
 
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPlugin(eleventySass, {
@@ -24,6 +29,23 @@ module.exports = function (eleventyConfig) {
             loadPaths: ["node_modules"]
         }
     });
+
+    eleventyConfig.addTransform("first", function(content) {
+        if (!this.page.outputPath.endsWith(".html")) { return content; }
+
+        const headers = content.match(/(?<=<h)\d(?=>)/g);
+        const highestHeaderInHtml = Math.max(...headers)
+
+        const match = content.match(/(?<=<section class="markdown-render">)(.|\n)*(?=<\/section>)/);
+        if (match === null) {
+            return content;
+        } else {
+            const originalMdString = match[0];
+            // TODO: patchwork solution, doesn't work for other headers
+            const newMdString = originalMdString.replaceAll("#", "#".repeat(highestHeaderInHtml + 1))
+            return content.replace(originalMdString, md.render(newMdString).body);
+        }
+    })
 
     eleventyConfig.addPlugin(embedEverything);
 
