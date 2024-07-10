@@ -3,7 +3,7 @@ const yaml = require("js-yaml");
 const eleventySass = require("eleventy-sass");
 const eleventyAutoCacheBuster = require("eleventy-auto-cache-buster");
 const embedEverything = require("eleventy-plugin-embed-everything");
-const md = require("jstransformer")(require("jstransformer-markdown-it"));
+const md = require("markdown-it")({breaks: true, typographer: true});
 
 const favicons = require("./.favicons");
 
@@ -43,7 +43,7 @@ module.exports = function (eleventyConfig) {
             const originalMdString = match[0];
             // TODO: patchwork solution, doesn't work for other headers
             const newMdString = originalMdString.replaceAll("#", "#".repeat(highestHeaderInHtml + 1))
-            return content.replace(originalMdString, md.render(newMdString).body);
+            return content.replace(originalMdString, md.render(newMdString));
         }
     })
 
