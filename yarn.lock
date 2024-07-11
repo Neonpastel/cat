@@ -121,10 +121,22 @@
   dependencies:
     "@directus/system-data" "1.0.4"
 
+"@directus/sdk@^16.1.1":
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/@directus/sdk/-/sdk-16.1.1.tgz#a701fe54a51ccb7e0badb8132a6d05acdbca544c"
+  integrity sha512-vF/vk4PvyndxBE9SwININy3bfqjVPfQ35AXbsvDaJpE5OVclmQGbLqkYP6233GHqVUnveJDDUJssuz/QjeSYyQ==
+  dependencies:
+    "@directus/system-data" "1.1.0"
+
 "@directus/system-data@1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@directus/system-data/-/system-data-1.0.4.tgz#49d07c3a5f0885ed3a59a4ccd714950ab83392da"
   integrity sha512-9qDfL/fSy1K01SMMXc7XiTbfAqA/1G9RBEO3nafHDN6SKJfE15YRlnELQA0LeWDKKiyIlWtKzpUBLrq7r6sN2Q==
+
+"@directus/system-data@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@directus/system-data/-/system-data-1.1.0.tgz#0c9583a5220b3c0f3ecc7aba51eddee9875b805b"
+  integrity sha512-ETOoTyUXHQJD1NemdlJSADm32GoljQGhZUbg8bB31GAmBnGghTx+E16zzcb1TxRHEqQhV7PfLOrtwEksSTIw8Q==
 
 "@iarna/toml@^2.2.5":
   version "2.2.5"
@@ -560,6 +572,13 @@ dev-ip@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/dev-ip/-/dev-ip-1.0.1.tgz#a76a3ed1855be7a012bb8ac16cb80f3c00dc28f0"
   integrity sha512-LmVkry/oDShEgSZPNgqCIp2/TlqtExeGmymru3uCELnfyjY11IzpAproLYs+1X88fXO6DBoYP3ul2Xo2yz2j6A==
+
+directus-to-data@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/directus-to-data/-/directus-to-data-0.1.1.tgz#b7ace5c1776926466f5d48c083b07dcaea3053ec"
+  integrity sha512-gO3DIBDqvDGvlpbqntj6w6mvc0ow7hzLONg9lPTDo+31s9ZRcdBNm7DvbljxwgF/gMPCtj7zBqSUt0z9Nxrlkw==
+  dependencies:
+    "@directus/sdk" "^16.1.1"
 
 doctypes@^1.1.0:
   version "1.1.0"

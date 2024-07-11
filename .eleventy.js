@@ -7,8 +7,7 @@ const md = require("markdown-it")({breaks: true, typographer: true});
 
 const favicons = require("./.favicons");
 
-const directusToData = require("./directus");
-
+const directusToData = require("directus-to-data");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
@@ -20,7 +19,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
     directusToData({
-        configFilename: ".directus.json"
+        configFilename: ".directus.json",
     })
 
     eleventyConfig.addPassthroughCopy("src/assets");

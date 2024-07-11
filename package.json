@@ -12,6 +12,7 @@
     "@11ty/eleventy": "^2.0.1",
     "@directus/sdk": "^16.1.0",
     "@sindresorhus/slugify": "^2.2.1",
+    "directus-to-data": "^0.1.1",
     "eleventy-auto-cache-buster": "^0.3.0",
     "eleventy-plugin-embed-everything": "^1.17.0",
     "eleventy-sass": "^2.2.3",
