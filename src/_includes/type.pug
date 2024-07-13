@@ -1,23 +1,12 @@
 ---
 layout: page.pug
-pagination:
-    data: types
-    size: 1
-    alias: type
-types:
-    - Videos
-    - Poetry
-permalink: "|/!{type.toLowerCase()}/"
-
-eleventyComputed:
-    title: "| !{type}"
-    order: "| !{pagination.pageNumber}"
 ---
 
 main#main
     h1=type
     ul
         each media in NeonpastelCat
+            - console.log(type, media.types)
             if media.types.includes(type)
                 a(href="../" + media.types[0].toLowerCase() + "/" + media.path + "/")
                     li=media.title
