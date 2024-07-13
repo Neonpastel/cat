@@ -39,6 +39,5 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    secrets:
-      CMS_URL: ${{ secrets.CMS_URL }}
-      STATIC_TOKEN: ${{ secrets.STATIC_TOKEN }}
+    secrets: inherit
+    
