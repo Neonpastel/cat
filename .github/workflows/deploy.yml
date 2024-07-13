@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Select latest ref instead of event trigger
+          ref: ${{ github.ref }}
       - uses: actions/setup-node@v4
       
       - name: GitHub Pages - Configure
