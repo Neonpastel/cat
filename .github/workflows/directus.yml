@@ -4,6 +4,10 @@ name: Update data from Directus webhook
 on:
   workflow_dispatch:
 
+concurrency:
+  group: directus
+  cancel-in-progress: true
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
