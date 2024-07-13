@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
       
       - name: Install directus-to-data
-        run: yarn install directus-to-data
+        run: yarn add directus-to-data
 
       - name: Fetch data
         run: npx directus-to-data
