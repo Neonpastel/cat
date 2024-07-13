@@ -8,11 +8,7 @@ jobs:
   update-data:
     runs-on: ubuntu-latest
     permissions:
-      # add-and-commit
       contents: write
-      # uses: deploy.yml
-      pages: write
-      id-token: write
     
     steps:
       - name: Checkout
@@ -39,3 +35,7 @@ jobs:
 
   deploy:
     uses: ./.github/workflows/deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
