@@ -32,3 +32,6 @@ jobs:
           add: 'src/_data/*'
           default_author: github_actions
           message: 'CMS update (${{ github.event.repository.updated_at}})'
+
+  deploy:
+    uses: ./.github/workflows/deploy.yml

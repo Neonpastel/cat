@@ -5,7 +5,8 @@ name: Deploy Eleventy to GitHub Pages
 on:
   push:
     branches: ["main"]
-  workflow_dispatch:
+  workflow_dispatch:  # Manual start
+  workflow_call:  # Start from other workflow
 
 permissions:
   contents: read
